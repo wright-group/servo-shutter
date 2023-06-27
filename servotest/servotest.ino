@@ -81,13 +81,13 @@ void loop()
     state = 0x00;
   }
   writePin(ledData, ~state & stateMask);
-  digitalWrite(ledControl,LOW);
-  digitalWrite(ledControl,HIGH);
+  //digitalWrite(ledControl,LOW);
+  //digitalWrite(ledControl,HIGH);
 
   state++;
   //state=0;
   state &= stateMask;
-  delay(2);
+  delay(10000);
 }
 
 void writeAddress(int addr)
@@ -139,5 +139,3 @@ void serialEvent()
   Serial.println(state);
   Serial.flush();
 }
-
-
